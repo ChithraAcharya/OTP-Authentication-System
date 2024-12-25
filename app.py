@@ -11,8 +11,8 @@ app.secret_key = 'your_secret_key'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'bosch0456@gmail.com'
-app.config['MAIL_PASSWORD'] = 'jpdjewrwbjtykfsc'  # Use an app password if 2FA is enabled
+app.config['MAIL_USERNAME'] = 'your_email@gmail.com'
+app.config['MAIL_PASSWORD'] = 'your_email_password'  # Use an app password if 2FA is enabled
 mail = Mail(app)
 
 # Simulated database
@@ -53,7 +53,7 @@ def login():
 
 #Send OTP Email
 def send_otp_email(email, otp):
-    msg = Message('Your OTP Code', sender='bosch0456@gmail.com', recipients=[email])
+    msg = Message('Your OTP Code', sender='your_email@gmail.com', recipients=[email])
     msg.body = f'Your OTP code is: {otp}'
     mail.send(msg)
 
